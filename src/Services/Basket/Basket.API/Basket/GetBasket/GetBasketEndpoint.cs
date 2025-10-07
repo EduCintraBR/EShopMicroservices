@@ -9,8 +9,6 @@
             {
                 var query = new GetBasketRequest(userName);
 
-                //var basket = await repository.GetBasket(userName);
-
                 var result = await sender.Send(query);
 
                 var response = result.Adapt<GetBasketResponse>();

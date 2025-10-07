@@ -17,10 +17,10 @@
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
         {
-            var result = await repository.StoreBasketAsync(command.Cart);
+            await repository.StoreBasketAsync(command.Cart);
             // TODO: Update cache
 
-            return new StoreBasketResult("swn");
+            return new StoreBasketResult(command.Cart.UserName);
         }
     }
 }
